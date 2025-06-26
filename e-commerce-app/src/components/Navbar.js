@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Container, Button } from "react-bootstrap";
+import { Navbar, Container, Button, Dropdown, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
@@ -58,13 +58,86 @@ const NavigationBar = ({ HowToPlay = true }) => {
   // }, [location.pathname]);
 
   return (
-    <Navbar bg="dark" variant="dark" expand="sm" fixed="top" className="px-3">
+    <Navbar
+      expand="sm"
+      fixed="top"
+      className="px-3"
+      style={{
+        backgroundColor: "rgba(33, 37, 41, 0.9)",
+        backdropFilter: "blur(10px)",
+        WebkitBackdropFilter: "blur(10px)",
+      }}
+    >
       <Container fluid>
         <Navbar.Brand as={Link} to="/" className="mb-0 text-light fw-bold fs-4">
-          E commerce website
+          Volt Buy
         </Navbar.Brand>
         <div className="d-flex align-items-center ms-auto">
-          //any buttons go here
+          <Form className="me-3">
+            <Form.Group controlId="search">
+              <Form.Control placeholder="🔍 Search" className="rounded-4" />
+            </Form.Group>
+          </Form>
+          <Dropdown align="end" className="me-3">
+            <Dropdown.Toggle
+              id="shop-dropdown"
+              variant="light"
+              className="ms-2 rounded-pill fw-bold"
+            >
+              Shop
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu
+              className="rounded-4 shadow px-2"
+              style={{
+                backgroundColor: "rgba(255, 255, 255, 0.5)",
+                backdropFilter: "blur(10px)",
+                WebkitBackdropFilter: "blur(10px)",
+              }}
+            >
+              <Dropdown.Item href="#/">All Tech</Dropdown.Item>
+              <Dropdown.Item href="#/">Smartphones</Dropdown.Item>
+              <Dropdown.Item href="#/">Laptops</Dropdown.Item>
+              <Dropdown.Item href="#/">Desktops</Dropdown.Item>
+              <Dropdown.Item href="#/">TVs & Monitors</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          <OverlayTrigger
+            trigger={["hover", "focus"]}
+            placement="bottom"
+            overlay={
+              <Popover
+                id="how-to-play-popover"
+                style={{
+                  backgroundColor: "rgba(255, 255, 255, 0.5)",
+                  backdropFilter: "blur(10px)",
+                  WebkitBackdropFilter: "blur(10px)",
+                }}
+              >
+                <Popover.Body className="p-0 my-1">
+                  <p
+                    className="text-center text-white mx-2 mt-2 px-2 py-1 rounded-4 shadow mb-0"
+                    style={{
+                      backgroundColor: "rgba(33, 37, 41, 0.9)",
+                      backdropFilter: "blur(10px)",
+                      WebkitBackdropFilter: "blur(10px)",
+                    }}
+                  >
+                    Cart
+                  </p>
+                </Popover.Body>
+              </Popover>
+            }
+          >
+            <Button
+              variant="light"
+              as={Link}
+              to="/howToPlay"
+              className="ms-2 rounded-pill fw-bold"
+            >
+              <i class="bi bi-cart"></i>
+            </Button>
+          </OverlayTrigger>
         </div>
       </Container>
     </Navbar>

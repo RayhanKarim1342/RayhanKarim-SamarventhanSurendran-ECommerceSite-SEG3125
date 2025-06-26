@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import Navbar from "../components/Navbar";
+import ContentCarousel from "../components/ContentCarousel";
 
 const Home = () => {
   const [selectedThemeID, setSelectedThemeID] = useState(null);
@@ -9,7 +10,7 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <Container className="position-relative"></Container>
+      <ContentCarousel />
     </div>
   );
 };
