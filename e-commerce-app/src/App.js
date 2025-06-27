@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Catalog from "./pages/Catalog";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/catalog/:category" element={<Catalog />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>

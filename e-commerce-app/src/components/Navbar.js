@@ -95,11 +95,11 @@ const NavigationBar = ({ HowToPlay = true }) => {
                 WebkitBackdropFilter: "blur(10px)",
               }}
             >
-              <Dropdown.Item href="#/">All Tech</Dropdown.Item>
-              <Dropdown.Item href="#/">Smartphones</Dropdown.Item>
-              <Dropdown.Item href="#/">Laptops</Dropdown.Item>
-              <Dropdown.Item href="#/">Desktops</Dropdown.Item>
-              <Dropdown.Item href="#/">TVs & Monitors</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/catalog/all">All Tech</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/catalog/smartphones">Smartphones</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/catalog/laptops">Laptops</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/catalog/desktops">Desktops</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/catalog/tvs-monitors">TVs & Monitors</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           <OverlayTrigger
