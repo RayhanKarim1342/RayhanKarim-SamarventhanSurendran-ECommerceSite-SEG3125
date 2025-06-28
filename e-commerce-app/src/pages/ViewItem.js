@@ -10,7 +10,7 @@ import { useState } from "react";
 
 const ViewItem = () => {
   const { itemID } = useParams();
-  const item = items.find((i) => i.id == parseInt(itemID));
+  const item = items.find((i) => i.id === parseInt(itemID));
   const capitalizedItem = (item) => {
     let words = item.split(" ");
     let returnItem = "";
@@ -43,7 +43,7 @@ const ViewItem = () => {
             <img
               src={item.img}
               className="mx-3 my-5 rounded-4 w-100 border border-dark-subtle shadow-lg"
-              alt="item image"
+              alt="img"
             />
           </Col>
           <Col

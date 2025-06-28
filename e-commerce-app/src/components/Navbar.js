@@ -193,7 +193,7 @@ const NavigationBar = ({ HowToPlay = true }) => {
               className="ms-2 rounded-pill fw-bold"
             >
               <i className="bi bi-cart"></i>
-              {cartCount != 0 && (
+              {cartCount !== 0 && (
                 <>
                   {"   "}
                   <Badge bg="danger">{cartCount}</Badge>
