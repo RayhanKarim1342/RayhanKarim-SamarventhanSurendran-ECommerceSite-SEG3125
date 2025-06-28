@@ -4,9 +4,6 @@ import Navbar from "../components/Navbar";
 import ContentCarousel from "../components/ContentCarousel";
 
 const Home = () => {
-  const [selectedThemeID, setSelectedThemeID] = useState(null);
-  const [selectedDifficultyID, setSelectedDifficultyID] = useState(null);
-
   return (
     <div>
       <Navbar />

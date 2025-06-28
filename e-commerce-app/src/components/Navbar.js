@@ -1,61 +1,51 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Navbar, Container, Button, Dropdown, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
-
-// const sections = [
-//   { id: "ourServices", label: "Our Services" },
-//   { id: "theBest", label: "Why We're The Best" },
-// ];
+import items from "../assets/items"; // Adjust the path as needed
 
 const NavigationBar = ({ HowToPlay = true }) => {
-  // const [activeSection, setActiveSection] = useState("");
-  // const location = useLocation();
-  // const navigate = useNavigate();
+  const [search, setSearch] = useState("");
+  const [results, setResults] = useState([]);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const searchRef = useRef(null);
+  const navigate = useNavigate();
 
-  // // Scroll to section with offset for fixed navbar
-  // const scrollToSection = (id) => {
-  //   const el = document.getElementById(id);
-  //   if (el) {
-  //     const yOffset = -70; // Adjust this value to match your navbar height
-  //     const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-  //     window.scrollTo({ top: y, behavior: "smooth" });
-  //   }
-  // };
+  const handleSearch = (e) => {
+    const value = e.target.value;
+    setSearch(value);
+    if (value.length > 0) {
+      const filtered = items.filter((item) =>
+        item.name.toLowerCase().includes(value.toLowerCase())
+      );
+      setResults(filtered);
+      setShowDropdown(filtered.length > 0);
+    } else {
+      setResults([]);
+      setShowDropdown(false);
+    }
+  };
 
-  // const handleNavClick = (id) => (e) => {
-  //   e.preventDefault();
-  //   if (location.pathname !== "/") {
-  //     navigate("/", { replace: false });
-  //     setTimeout(() => {
-  //       scrollToSection(id);
-  //     }, 100);
-  //   } else {
-  //     scrollToSection(id);
-  //   }
-  // };
+  const handleResultClick = (item) => {
+    setSearch("");
+    setResults([]);
+    setShowDropdown(false);
+    navigate(`/catalog/${item.category}`);
+  };
 
-  // Update active section on scroll
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     let current = "";
-  //     for (const section of sections) {
-  //       const el = document.getElementById(section.id);
-  //       if (el) {
-  //         const rect = el.getBoundingClientRect();
-  //         if (rect.top <= 120 && rect.bottom > 120) {
-  //           current = section.id;
-  //           break;
-  //         }
-  //       }
-  //     }
-  //     setActiveSection(current);
-  //   };
-  //   window.addEventListener("scroll", handleScroll, { passive: true });
-  //   handleScroll();
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, [location.pathname]);
+  // Hide dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
+        setShowDropdown(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <Navbar
@@ -73,9 +63,39 @@ const NavigationBar = ({ HowToPlay = true }) => {
           Volt Buy
         </Navbar.Brand>
         <div className="d-flex align-items-center ms-auto">
-          <Form className="me-3">
+          <Form className="me-3 position-relative" ref={searchRef}>
             <Form.Group controlId="search">
-              <Form.Control placeholder="🔍 Search" className="rounded-4" />
+              <Form.Control
+                placeholder="🔍 Search"
+                className="rounded-4"
+                value={search}
+                onChange={handleSearch}
+                autoComplete="off"
+                onFocus={() => setShowDropdown(results.length > 0)}
+              />
+              {showDropdown && (
+                <div
+                  className="position-absolute shadow rounded-4 w-100"
+                  style={{
+                    zIndex: 1050,
+                    top: "110%",
+                    backgroundColor: "rgba(255, 255, 255, 0.5)",
+                    backdropFilter: "blur(10px)",
+                    WebkitBackdropFilter: "blur(10px)",
+                  }}
+                >
+                  {results.map((item) => (
+                    <div
+                      key={item.id}
+                      className="px-3 py-2 search-result-item rounded-pill mx-3 my-2"
+                      style={{ cursor: "pointer" }}
+                      onMouseDown={() => handleResultClick(item)}
+                    >
+                      {item.name}
+                    </div>
+                  ))}
+                </div>
+              )}
             </Form.Group>
           </Form>
           <Dropdown align="end" className="me-3">
@@ -88,18 +108,28 @@ const NavigationBar = ({ HowToPlay = true }) => {
             </Dropdown.Toggle>
 
             <Dropdown.Menu
-              className="rounded-4 shadow px-2"
+              className="rounded-4 shadow px-2 menu-fade"
               style={{
                 backgroundColor: "rgba(255, 255, 255, 0.5)",
                 backdropFilter: "blur(10px)",
                 WebkitBackdropFilter: "blur(10px)",
               }}
             >
-              <Dropdown.Item as={Link} to="/catalog/all">All Tech</Dropdown.Item>
-              <Dropdown.Item as={Link} to="/catalog/smartphones">Smartphones</Dropdown.Item>
-              <Dropdown.Item as={Link} to="/catalog/laptops">Laptops</Dropdown.Item>
-              <Dropdown.Item as={Link} to="/catalog/desktops">Desktops</Dropdown.Item>
-              <Dropdown.Item as={Link} to="/catalog/tvs-monitors">TVs & Monitors</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/catalog/all">
+                All Tech
+              </Dropdown.Item>
+              <Dropdown.Item as={Link} to="/catalog/smartphones">
+                Smartphones
+              </Dropdown.Item>
+              <Dropdown.Item as={Link} to="/catalog/laptops">
+                Laptops
+              </Dropdown.Item>
+              <Dropdown.Item as={Link} to="/catalog/desktops">
+                Desktops
+              </Dropdown.Item>
+              <Dropdown.Item as={Link} to="/catalog/displays">
+                TVs & Monitors
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           <OverlayTrigger
@@ -108,6 +138,7 @@ const NavigationBar = ({ HowToPlay = true }) => {
             overlay={
               <Popover
                 id="how-to-play-popover"
+                className="menu-fade"
                 style={{
                   backgroundColor: "rgba(255, 255, 255, 0.5)",
                   backdropFilter: "blur(10px)",
@@ -135,7 +166,7 @@ const NavigationBar = ({ HowToPlay = true }) => {
               to="/howToPlay"
               className="ms-2 rounded-pill fw-bold"
             >
-              <i class="bi bi-cart"></i>
+              <i className="bi bi-cart"></i>
             </Button>
           </OverlayTrigger>
         </div>

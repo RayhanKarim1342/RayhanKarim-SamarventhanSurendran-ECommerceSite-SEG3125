@@ -63,4 +63,11 @@ footer {
   transition: background 0.2s, border-radius 0.2s;       
 }
 
+.search-result-item:hover {
+  background-color: #212529 !important; 
+  color: #fff !important;
+  border-radius: 0.8rem !important;       
+  transition: background 0.2s, border-radius 0.05s;  
+}
+
 
