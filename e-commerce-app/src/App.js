@@ -6,6 +6,7 @@ import NotFound from "./pages/NotFound";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Catalog from "./pages/Catalog";
 import ViewItem from "./pages/ViewItem";
+import ViewCart from "./pages/ViewCart";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/catalog/:category" element={<Catalog />} />
           <Route path="/item/:itemID" element={<ViewItem />} />
+          <Route path="/cart" element={<ViewCart />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>

@@ -70,4 +70,14 @@ footer {
   transition: background 0.2s, border-radius 0.05s;  
 }
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1) grayscale(1) brightness(0.2);
+}
+
+.carousel-indicators .active {
+  background-color: #212529; /* gold/yellow or any color you want */
+  opacity: 1;
+}
+
 

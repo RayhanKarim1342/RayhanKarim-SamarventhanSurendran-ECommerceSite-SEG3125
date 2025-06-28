@@ -144,7 +144,7 @@ const items = [
   {
     id: 16,
     category: "displays",
-    name: "Dell UltraSharp Moniter",
+    name: "Dell UltraSharp Monitor",
     img: "/images/ultra.png",
     price: "$2,749",
     description:

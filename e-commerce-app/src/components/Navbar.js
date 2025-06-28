@@ -1,16 +1,43 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Navbar, Container, Button, Dropdown, Form } from "react-bootstrap";
+import {
+  Navbar,
+  Container,
+  Button,
+  Dropdown,
+  Form,
+  Badge,
+} from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
-import items from "../assets/items"; // Adjust the path as needed
+import items from "../assets/items";
 
 const NavigationBar = ({ HowToPlay = true }) => {
   const [search, setSearch] = useState("");
   const [results, setResults] = useState([]);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [cartCount, setCartCount] = useState(() => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    return cart.length;
+  });
   const searchRef = useRef(null);
   const navigate = useNavigate();
+
+  // Update cart count on localStorage change and on interval (for same-tab updates)
+  useEffect(() => {
+    const updateCartCount = () => {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      setCartCount(cart.length);
+    };
+
+    window.addEventListener("storage", updateCartCount);
+    const interval = setInterval(updateCartCount, 50);
+
+    return () => {
+      window.removeEventListener("storage", updateCartCount);
+      clearInterval(interval);
+    };
+  }, []);
 
   const handleSearch = (e) => {
     const value = e.target.value;
@@ -31,10 +58,9 @@ const NavigationBar = ({ HowToPlay = true }) => {
     setSearch("");
     setResults([]);
     setShowDropdown(false);
-    navigate(`/catalog/${item.category}`);
+    navigate(`/item/${item.id}`);
   };
 
-  // Hide dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (searchRef.current && !searchRef.current.contains(event.target)) {
@@ -154,7 +180,7 @@ const NavigationBar = ({ HowToPlay = true }) => {
                       WebkitBackdropFilter: "blur(10px)",
                     }}
                   >
-                    Cart
+                    View Cart
                   </p>
                 </Popover.Body>
               </Popover>
@@ -163,10 +189,16 @@ const NavigationBar = ({ HowToPlay = true }) => {
             <Button
               variant="light"
               as={Link}
-              to="/howToPlay"
+              to="/cart"
               className="ms-2 rounded-pill fw-bold"
             >
               <i className="bi bi-cart"></i>
+              {cartCount != 0 && (
+                <>
+                  {"   "}
+                  <Badge bg="danger">{cartCount}</Badge>
+                </>
+              )}
             </Button>
           </OverlayTrigger>
         </div>
