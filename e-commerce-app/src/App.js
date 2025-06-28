@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Catalog from "./pages/Catalog";
 import ViewItem from "./pages/ViewItem";
 import ViewCart from "./pages/ViewCart";
+import Checkout from "./pages/Checkout";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/item/:itemID" element={<ViewItem />} />
             <Route path="/cart" element={<ViewCart />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
         </Router>
       </div>

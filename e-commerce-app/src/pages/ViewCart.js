@@ -107,7 +107,7 @@ const ViewCart = () => {
                   <Button
                     variant="light"
                     as={Link}
-                    to={`/`}
+                    to={`/checkout`}
                     className="rounded-pill p-2 px-3 fw-bold py-3 shadow text-capitalize"
                   >
                     Proceed to Checkout

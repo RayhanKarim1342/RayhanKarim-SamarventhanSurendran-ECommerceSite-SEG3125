@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Card, Container, Row, Col } from "react-bootstrap";
+import { Card, Container, Row, Col, Button } from "react-bootstrap";
 import Navbar from "../components/Navbar";
 import items from "../assets/items";
 
@@ -10,10 +10,6 @@ const Catalog = () => {
     category === "all" ? items : items.filter((i) => i.category === category);
 
   const navigate = useNavigate();
-
-  const handleResultClick = (item) => {
-    navigate(`/item/${item.id}`);
-  };
 
   return (
     <div>
@@ -38,10 +34,8 @@ const Catalog = () => {
                   style={{
                     height: "200px",
                     overflow: "hidden",
-                    background: "#f8f9fa",
-                    cursor: "pointer",
+                    background: "#f8f9fa"
                   }}
-                  onMouseDown={() => handleResultClick(item)}
                 >
                   <Card.Img
                     variant="top"
@@ -50,20 +44,23 @@ const Catalog = () => {
                     style={{
                       objectFit: "cover",
                       width: "100%",
-                      height: "100%",
+                      height: "100%"
                     }}
                     className="rounded-top-2"
                   />
                 </div>
-                <Card.Body
-                  className="d-flex flex-column"
-                  style={{ cursor: "pointer" }}
-                  onMouseDown={() => handleResultClick(item)}
-                >
+                <Card.Body className="d-flex flex-column">
                   <Card.Title className="fs-5">{item.name}</Card.Title>
                   <Card.Text className="text-primary fw-bold mb-2">
                     {item.price}
                   </Card.Text>
+                  <Button
+                    variant="dark"
+                    className="rounded-pill mt-auto fw-bold px-5 py-2"
+                    onClick={() => navigate(`/item/${item.id}`)}
+                  >
+                    View Product
+                  </Button>
                 </Card.Body>
               </Card>
             </Col>

@@ -50,15 +50,15 @@ const ViewItem = () => {
             md={6}
             className="d-flex flex-column justify-content-start align-items-center"
           >
-            <h2
-              className="mt-5 mb-5 mx-5 px-4 py-2 text-capitalize text-center fw-bold text-dark bg-light rounded-pill shadow-lg"
-              style={{ letterSpacing: "1px", fontSize: "2.2rem" }}
-            >
-              {item.name}
-            </h2>
-            <p className="display-6 mt-3 mx-5 mb-2 pb-5 px-5 text-center fs-2">
-              {item.description}
-            </p>
+          <h2
+            className="mt-5 mb-3 mx-5 px-4 py-2 text-capitalize text-center fw-bold text-dark bg-light rounded-pill shadow-lg"
+            style={{ letterSpacing: "1px", fontSize: "2.2rem" }}
+          >
+            {item.name}
+          </h2>
+          <p className="display-6 mt-3 mx-5 mb-2 pb-5 px-5 text-center fs-2">
+            {item.description}
+          </p>
             <div className="d-flex flex-row justify-content-center align-items-center gap-3 mt-3 mb-5">
               <Button
                 variant="light"
@@ -76,6 +76,9 @@ const ViewItem = () => {
                 Add to Cart &nbsp;&nbsp;<i className="bi bi-cart"></i>
               </Button>
             </div>
+            <p className="fs-3 fw-bold text-primary text-center mb-3">
+            {item.price}
+          </p>
             {showAlert && (
               <Alert variant="success" className="p-2 px-3 fw-bold py-3 shadow">
                 {capitalizedItem(item.name)} Successfully added to Cart
