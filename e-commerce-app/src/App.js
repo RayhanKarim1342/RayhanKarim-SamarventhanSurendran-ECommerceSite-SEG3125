@@ -11,22 +11,22 @@ import ViewCart from "./pages/ViewCart";
 function App() {
   return (
     <div className="app-wrapper d-flex flex-column min-vh-100">
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/catalog/:category" element={<Catalog />} />
-          <Route path="/item/:itemID" element={<ViewItem />} />
-          <Route path="/cart" element={<ViewCart />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Router>
+      <div className="flex-grow-1 d-flex flex-column">
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/catalog/:category" element={<Catalog />} />
+            <Route path="/item/:itemID" element={<ViewItem />} />
+            <Route path="/cart" element={<ViewCart />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Router>
+      </div>
       <footer
-        className="footer bg-dark text-white d-flex justify-content-center align-items-center mt-5"
+        className="footer bg-dark text-white d-flex justify-content-center align-items-center"
         style={{ height: "48px" }}
       >
-        <Container className="text-center m-0 p-0">
-          The best tech shop
-        </Container>
+        <Container className="text-center m-0 p-0">© 2025 Volt Buy</Container>
       </footer>
     </div>
   );
