@@ -76,8 +76,13 @@ footer {
 }
 
 .carousel-indicators .active {
-  background-color: #212529; /* gold/yellow or any color you want */
+  background-color: #212529; 
   opacity: 1;
+}
+
+.card.shadow:hover, .card.shadow:focus {
+  box-shadow: 0 0.5rem 1rem rgba(0, 123, 255, 0.5), 0 0.125rem 0.25rem rgba(0,0,0,0.075) !important;
+  transition: box-shadow 0.2s !important;
 }
 
 
