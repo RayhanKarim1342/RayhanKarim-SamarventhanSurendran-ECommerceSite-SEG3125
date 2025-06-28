@@ -79,7 +79,7 @@ const items = [
   {
     id: 9,
     category: "desktops",
-    name: "Dell Pro max",
+    name: "Dell Pro Max",
     img: "/images/DP.png",
     price: "$1,558",
     description:
