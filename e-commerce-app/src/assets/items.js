@@ -55,7 +55,7 @@ const items = [
     price: "$2,399",
     description:
       "A powerhouse laptop with Apple’s M4 chip, Liquid Retina XDR display, and all-day battery life.",
-    tags: ["macOS", "Retina display", "creative", "battery life"],
+    tags: ["macOS", "Retina display", "creative", "battery life", "portable"],
   },
   {
     id: 6,
@@ -72,6 +72,7 @@ const items = [
       "4K",
       "touchscreen laptop",
       "sleek design",
+      "portable",
     ],
   },
   {
@@ -101,7 +102,7 @@ const items = [
     price: "$3,059",
     description:
       "Business-class build with Intel vPro, Dolby Vision support, and unmatched typing comfort.",
-    tags: ["Windows", "business", "Dolby Vision", "ThinkPad"],
+    tags: ["Windows", "business", "Dolby Vision", "ThinkPad", "portable"],
   },
 
   // Desktops
