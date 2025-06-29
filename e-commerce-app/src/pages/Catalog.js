@@ -52,7 +52,7 @@ const Catalog = () => {
     }
     if (
       selectedTags.length &&
-      !selectedTags.some((tag) => item.tags.includes(tag))
+      !selectedTags.every((tag) => item.tags.includes(tag))
     )
       return false;
     return true;
