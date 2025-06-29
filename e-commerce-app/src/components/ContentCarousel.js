@@ -28,7 +28,7 @@ function ContentCarousel() {
       activeIndex={index}
       onSelect={handleSelect}
       className="mx-5 shadow-lg"
-      style={{ borderRadius: "1.5rem" }}
+      style={{ borderRadius: "1.5rem", width: "1000px" }}
     >
       {randomItems.map((item) => (
         <Carousel.Item
@@ -41,7 +41,7 @@ function ContentCarousel() {
             className="d-block w-100"
             alt={item.name}
             style={{
-              height: "1200px",
+              height: "800px",
               objectFit: "cover",
               objectPosition: "center",
               borderRadius: "1.5rem",
