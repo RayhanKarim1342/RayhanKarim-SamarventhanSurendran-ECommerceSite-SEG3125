@@ -66,7 +66,13 @@ const items = [
     price: "$2,399",
     description:
       "Premium design meets performance in this 16-inch laptop with InfinityEdge 4K touch display.",
-    tags: ["Windows", "performance", "4K", "touchscreen", "sleek design"],
+    tags: [
+      "Windows",
+      "performance",
+      "4K",
+      "touchscreen laptop",
+      "sleek design",
+    ],
   },
   {
     id: 7,
@@ -77,7 +83,14 @@ const items = [
     price: "$2,389",
     description:
       "A versatile 2-in-1 with sleek looks, OLED display, and long battery life for productivity on the go.",
-    tags: ["Windows", "OLED", "2-in-1", "portable", "battery life"],
+    tags: [
+      "Windows",
+      "OLED",
+      "2-in-1",
+      "portable",
+      "battery life",
+      "touchscreen laptop",
+    ],
   },
   {
     id: 8,
