@@ -104,7 +104,7 @@ const Catalog = () => {
                   />
                 ))}
               </div>
-              <Accordion defaultActiveKey="0" className="mb-0">
+              <Accordion defaultActiveKey={null} className="mb-0">
                 <Accordion.Item eventKey="0">
                   <Accordion.Header>
                     <span className="fw-bold">Tags</span>
@@ -127,7 +127,7 @@ const Catalog = () => {
           </Col>
           <Col md={9}>
             <Row>
-              <Col md={12}>
+              <Col xd={12}>
                 <h2
                   className="mb-5 mx-5 px-4 py-2 text-capitalize text-center fw-bold text-dark bg-light rounded-pill shadow-lg"
                   style={{ letterSpacing: "1px", fontSize: "2.2rem" }}
@@ -142,7 +142,7 @@ const Catalog = () => {
                   <Card className="h-100 shadow border-0 rounded-2">
                     <div
                       style={{
-                        height: "200px",
+                        height: "300px",
                         overflow: "hidden",
                         background: "#f8f9fa",
                       }}
