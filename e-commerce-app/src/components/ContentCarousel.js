@@ -41,7 +41,7 @@ function ContentCarousel() {
             className="d-block w-100"
             alt={item.name}
             style={{
-              height: "800px",
+              height: "1200px",
               objectFit: "cover",
               objectPosition: "center",
               borderRadius: "1.5rem",
