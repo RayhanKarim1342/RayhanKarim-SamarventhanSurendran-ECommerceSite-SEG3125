@@ -33,6 +33,11 @@ const Catalog = () => {
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [selectedPrices, setSelectedPrices] = useState([]);
   const [selectedTags, setSelectedTags] = useState([]);
+  const [tagSearch, setTagSearch] = useState("");
+
+  const filteredTags = tags.filter((tag) =>
+    tag.toLowerCase().includes(tagSearch.toLowerCase())
+  );
 
   const filtered = filteredByCategory.filter((item) => {
     if (selectedBrands.length && !selectedBrands.includes(item.brand))
@@ -75,7 +80,8 @@ const Catalog = () => {
       <Navbar />
       <Container fluid className="mt-0 pt-4">
         <Row>
-          <Col md={3} className="mb-4 mt-5">
+          {/* Faceted Search Sidebar */}
+          <Col md={3} className="mb-4 mt-5 py-2">
             <div className="bg-light rounded-4 shadow-sm p-4 mt-5 shadow-lg">
               <h5 className="fw-bold mb-3">Filter</h5>
               <div className="mb-3">
@@ -110,7 +116,15 @@ const Catalog = () => {
                     <span className="fw-bold">Tags</span>
                   </Accordion.Header>
                   <Accordion.Body>
-                    {tags.map((tag) => (
+                    <Form.Control
+                      type="text"
+                      placeholder="Search tags..."
+                      className="mb-3"
+                      value={tagSearch}
+                      onChange={(e) => setTagSearch(e.target.value)}
+                      autoComplete="off"
+                    />
+                    {filteredTags.map((tag) => (
                       <Form.Check
                         key={tag}
                         type="checkbox"
@@ -120,14 +134,18 @@ const Catalog = () => {
                         className="mb-1"
                       />
                     ))}
+                    {filteredTags.length === 0 && (
+                      <div className="text-muted small">No tags found.</div>
+                    )}
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
             </div>
           </Col>
+          {/* Product Grid */}
           <Col md={9}>
             <Row>
-              <Col xd={12}>
+              <Col md={12}>
                 <h2
                   className="mb-5 mx-5 px-4 py-2 text-capitalize text-center fw-bold text-dark bg-light rounded-pill shadow-lg"
                   style={{ letterSpacing: "1px", fontSize: "2.2rem" }}
