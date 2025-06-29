@@ -23,72 +23,72 @@ function ContentCarousel() {
     navigate(`/item/${item.id}`);
   };
 
-return (
-  <div
-    style={{
-      minHeight: "900px",
-      width: "100%",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-    }}
-  >
+  return (
     <div
       style={{
-        background: "white", 
-        borderRadius: "1.5rem",
-        boxShadow: "0 0.5rem 1rem rgb(31, 82, 211)",
-        padding: "2rem",
-        maxWidth: "1100px",
+        minHeight: "900px",
         width: "100%",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
         display: "flex",
         justifyContent: "center",
+        alignItems: "center",
       }}
     >
-      <Carousel
-        activeIndex={index}
-        onSelect={handleSelect}
-        className="mx-5 shadow-lg"
-        style={{ borderRadius: "1.5rem", width: "1000px" }}
+      <div
+        style={{
+          background: "white",
+          borderRadius: "1.5rem",
+          boxShadow: "0 0.5rem 1rem rgb(255, 205, 252)",
+          padding: "1rem",
+          maxWidth: "1200px",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+        }}
       >
-        {randomItems.map((item) => (
-          <Carousel.Item
-            key={item.id}
-            style={{ cursor: "pointer" }}
-            onMouseDown={() => handleResultClick(item)}
-          >
-            <img
-              src={item.img}
-              className="d-block w-100"
-              alt={item.name}
-              style={{
-                height: "800px",
-                objectFit: "cover",
-                objectPosition: "center",
-                borderRadius: "1.5rem",
-              }}
-            />
-            <Carousel.Caption
-              className="text-center text-white mt-2 px-5 py-1 rounded-4 shadow mb-0"
-              style={{
-                backgroundColor: "rgba(33, 37, 41, 0.7)",
-                backdropFilter: "blur(10px)",
-                WebkitBackdropFilter: "blur(10px)",
-              }}
+        <Carousel
+          activeIndex={index}
+          onSelect={handleSelect}
+          className="mx-2 shadow-lg"
+          style={{ borderRadius: "1.5rem", width: "1200px" }}
+        >
+          {randomItems.map((item) => (
+            <Carousel.Item
+              key={item.id}
+              style={{ cursor: "pointer" }}
+              onMouseDown={() => handleResultClick(item)}
             >
-              <h3 className="display-1 fw-bold">{item.name}</h3>
-              <p className="fs-4">{item.description}</p>
-              <p className="fw-bold text-primary fs-3">{item.price}</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        ))}
-      </Carousel>
+              <img
+                src={item.img}
+                className="d-block w-100"
+                alt={item.name}
+                style={{
+                  height: "800px",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                  borderRadius: "1.5rem",
+                }}
+              />
+              <Carousel.Caption
+                className="text-center text-white mt-2 px-5 py-1 rounded-4 shadow mb-0"
+                style={{
+                  backgroundColor: "rgba(33, 37, 41, 0.7)",
+                  backdropFilter: "blur(10px)",
+                  WebkitBackdropFilter: "blur(10px)",
+                }}
+              >
+                <h3 className="display-1 fw-bold">{item.name}</h3>
+                <p className="fs-4">{item.description}</p>
+                <p className="fw-bold text-primary fs-3">{item.price}</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      </div>
     </div>
-  </div>
-);
+  );
 }
 
 export default ContentCarousel;

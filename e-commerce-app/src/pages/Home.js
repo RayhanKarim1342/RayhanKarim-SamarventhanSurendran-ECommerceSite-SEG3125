@@ -4,16 +4,7 @@ import ContentCarousel from "../components/ContentCarousel";
 
 const Home = () => {
   return (
-    <div
-      style={{
-        height: "100%",
-        width: "100%",
-        backgroundImage: "url('/images/homeImage.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <div className="home-background">
       <Navbar />
       <ContentCarousel />
     </div>

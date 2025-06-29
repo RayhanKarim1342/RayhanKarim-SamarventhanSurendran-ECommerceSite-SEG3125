@@ -32,7 +32,7 @@ const ViewCart = () => {
       <Navbar />
       <Container
         className="border border-dark-subtle rounded-4 shadow-lg"
-        style={{ backgroundColor: "ghostwhite" }}
+        style={{ backgroundColor: "ghostwhite", minHeight: "500px" }}
       >
         <Row>
           <Col md={8}>
