@@ -50,8 +50,8 @@ const Catalog = () => {
                   />
                 </div>
                 <Card.Body className="d-flex flex-column">
-                  <Card.Title className="fs-5">{item.name}</Card.Title>
-                  <Card.Text className="text-primary fw-bold mb-2">
+                  <Card.Title className="fs-5 text-center">{item.name}</Card.Title>
+                  <Card.Text className="text-dark fw-bold mb-2 text-center">
                     {item.price}
                   </Card.Text>
                   <Button

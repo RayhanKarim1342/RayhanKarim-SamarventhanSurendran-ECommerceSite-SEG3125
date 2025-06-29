@@ -76,7 +76,7 @@ const ViewItem = () => {
                 Add to Cart &nbsp;&nbsp;<i className="bi bi-cart"></i>
               </Button>
             </div>
-            <p className="fs-3 fw-bold text-primary text-center mb-3">
+            <p className="fs-3 fw-bold text-dark text-center mb-3">
             {item.price}
           </p>
             {showAlert && (

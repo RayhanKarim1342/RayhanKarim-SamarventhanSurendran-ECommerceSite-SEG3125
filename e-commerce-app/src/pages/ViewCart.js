@@ -68,7 +68,7 @@ const ViewCart = () => {
                     />
                     <div className="flex-grow-1 p-3">
                       <h5 className="fw-bold">{item.name}</h5>
-                      <p className="text-primary fw-bold">{item.price}</p>
+                      <p className="text-dark fw-bold">{item.price}</p>
                     </div>
                     <OverlayTrigger
                       trigger="hover"
