@@ -9,7 +9,7 @@ const items = [
     price: "$1,129",
     description:
       "Apple’s latest iPhone with an advanced A18 chip, enhanced camera system, and stunning OLED display.",
-    tags: ["iOS", "OLED", "A18 chip", "flagship", "photography"],
+    tags: ["iOS", "OLED", "flagship", "photography"],
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const items = [
     price: "$1,198",
     description:
       "A sleek Android flagship with a vibrant AMOLED display and pro-grade triple-lens camera.",
-    tags: ["Android", "AMOLED", "triple camera", "flagship", "fast charging"],
+    tags: ["Android", "AMOLED", "flagship", "photography", "fast charging"],
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const items = [
     price: "$1,099",
     description:
       "A pure Android experience powered by Google Tensor chip and industry-leading AI photography.",
-    tags: ["Android", "Google Tensor", "AI camera", "clean UI", "Pixel"],
+    tags: ["Android", "AI camera", "photography", "clean UI"],
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const items = [
     price: "$1,249",
     description:
       "Blazing-fast performance with Snapdragon 8 Gen chip and ultra-smooth 144Hz display.",
-    tags: ["Android", "Snapdragon", "144Hz", "performance", "gaming"],
+    tags: ["Android", "performance", "144Hz", "gaming"],
   },
 
   // Laptops
@@ -55,13 +55,7 @@ const items = [
     price: "$2,399",
     description:
       "A powerhouse laptop with Apple’s M4 chip, Liquid Retina XDR display, and all-day battery life.",
-    tags: [
-      "macOS",
-      "M4 chip",
-      "Retina display",
-      "creative work",
-      "battery life",
-    ],
+    tags: ["macOS", "Retina display", "creative", "battery life"],
   },
   {
     id: 6,
@@ -72,7 +66,7 @@ const items = [
     price: "$2,399",
     description:
       "Premium design meets performance in this 16-inch laptop with InfinityEdge 4K touch display.",
-    tags: ["Windows", "4K", "touchscreen", "sleek design", "performance"],
+    tags: ["Windows", "performance", "4K", "touchscreen", "sleek design"],
   },
   {
     id: 7,
@@ -83,7 +77,7 @@ const items = [
     price: "$2,389",
     description:
       "A versatile 2-in-1 with sleek looks, OLED display, and long battery life for productivity on the go.",
-    tags: ["Windows", "2-in-1", "OLED", "portable", "stylus support"],
+    tags: ["Windows", "OLED", "2-in-1", "portable", "battery life"],
   },
   {
     id: 8,
@@ -94,7 +88,7 @@ const items = [
     price: "$3,059",
     description:
       "Business-class build with Intel vPro, Dolby Vision support, and unmatched typing comfort.",
-    tags: ["Windows", "business", "vPro", "Dolby Vision", "ThinkPad"],
+    tags: ["Windows", "business", "Dolby Vision", "ThinkPad"],
   },
 
   // Desktops
@@ -107,7 +101,7 @@ const items = [
     price: "$1,558",
     description:
       "All-around desktop for professionals with top-tier performance and expandability.",
-    tags: ["Windows", "professional", "expandable", "multitasking", "Dell"],
+    tags: ["Windows", "performance", "expandable", "multitasking"],
   },
   {
     id: 10,
@@ -118,7 +112,7 @@ const items = [
     price: "$8,999",
     description:
       "Apple’s most powerful workstation, built for creative and technical professionals.",
-    tags: ["macOS", "workstation", "modular", "creative", "performance"],
+    tags: ["macOS", "performance", "creative", "workstation"],
   },
   {
     id: 11,
@@ -129,7 +123,7 @@ const items = [
     price: "$3,649",
     description:
       "Gaming beast with high-end graphics and cooling system in a bold chassis.",
-    tags: ["Windows", "gaming", "RGB", "high performance", "cooling"],
+    tags: ["Windows", "performance", "gaming", "cooling", "RGB"],
   },
   {
     id: 12,
@@ -140,10 +134,10 @@ const items = [
     price: "$2,399",
     description:
       "A sleek gaming rig with RGB lighting, overclock-ready CPU, and powerful GPU support.",
-    tags: ["Windows", "gaming", "RGB", "overclocking", "Lenovo"],
+    tags: ["Windows", "performance", "gaming", "RGB", "overclocking"],
   },
 
-  // TVs & Monitors
+  // Displays
   {
     id: 13,
     category: "displays",
@@ -164,7 +158,7 @@ const items = [
     price: "$1,999",
     description:
       "UltraWide screen real estate perfect for multitasking and immersive content creation.",
-    tags: ["UltraWide", "monitor", "LG", "multitasking", "content creation"],
+    tags: ["UltraWide", "monitor", "multitasking", "content creation"],
   },
   {
     id: 15,
@@ -175,7 +169,7 @@ const items = [
     price: "$6,299",
     description:
       "Apple’s top-tier monitor with 6K resolution and extreme dynamic range for pros.",
-    tags: ["Apple", "6K", "XDR", "creative professionals", "retina"],
+    tags: ["6K", "XDR", "creative", "Retina display"],
   },
   {
     id: 16,
@@ -186,7 +180,7 @@ const items = [
     price: "$2,749",
     description:
       "Color-accurate 4K monitor tailored for design, media, and productivity workflows.",
-    tags: ["4K", "color-accurate", "Dell", "productivity", "design"],
+    tags: ["4K", "color-accurate", "productivity", "design"],
   },
 ];
 
