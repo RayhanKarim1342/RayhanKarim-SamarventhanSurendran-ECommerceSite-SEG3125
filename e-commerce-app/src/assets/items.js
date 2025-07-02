@@ -9,7 +9,7 @@ const items = [
     price: "$1,129",
     description:
       "Apple’s latest iPhone with an advanced A18 chip, enhanced camera system, and stunning OLED display.",
-    tags: ["smartphone", "iOS", "Apple", "OLED", "photography", "flagship"],
+    tags: ["smartphone", "iOS", "OLED", "photography", "flagship"],
   },
   {
     id: 2,
@@ -23,7 +23,6 @@ const items = [
     tags: [
       "smartphone",
       "Android",
-      "Samsung",
       "AMOLED",
       "photography",
       "fast-charging",
@@ -39,14 +38,7 @@ const items = [
     price: "$1,099",
     description:
       "A pure Android experience powered by Google Tensor chip and industry-leading AI photography.",
-    tags: [
-      "smartphone",
-      "Android",
-      "Google",
-      "AI-camera",
-      "photography",
-      "clean-UI",
-    ],
+    tags: ["smartphone", "Android", "AI-camera", "photography"],
   },
   {
     id: 4,
@@ -57,14 +49,7 @@ const items = [
     price: "$1,249",
     description:
       "Blazing-fast performance with Snapdragon 8 Gen chip and ultra-smooth 144Hz display.",
-    tags: [
-      "smartphone",
-      "Android",
-      "OnePlus",
-      "144Hz",
-      "gaming",
-      "performance",
-    ],
+    tags: ["smartphone", "Android"],
   },
 
   // Laptops
@@ -80,12 +65,13 @@ const items = [
     tags: [
       "laptop",
       "macOS",
-      "Apple",
-      "Retina",
+      "Liquid Retina",
       "XDR",
       "creative",
       "portable",
       "battery-life",
+      "performance",
+      "productivity",
     ],
   },
   {
@@ -105,6 +91,7 @@ const items = [
       "touchscreen",
       "portable",
       "performance",
+      "productivity",
     ],
   },
   {
@@ -119,7 +106,6 @@ const items = [
     tags: [
       "laptop",
       "Windows",
-      "HP",
       "OLED",
       "2-in-1",
       "touchscreen",
@@ -140,10 +126,10 @@ const items = [
     tags: [
       "laptop",
       "Windows",
-      "Lenovo",
       "Dolby-Vision",
       "business",
       "portable",
+      "productivity",
     ],
   },
 
@@ -157,14 +143,7 @@ const items = [
     price: "$1,558",
     description:
       "All-around desktop for professionals with top-tier performance and expandability.",
-    tags: [
-      "desktop",
-      "Windows",
-      "Dell",
-      "performance",
-      "expandable",
-      "multitasking",
-    ],
+    tags: ["desktop", "Windows", "performance", "upgradeable"],
   },
   {
     id: 10,
@@ -178,10 +157,10 @@ const items = [
     tags: [
       "desktop",
       "macOS",
-      "Apple",
       "workstation",
       "creative",
       "performance",
+      "productivity",
     ],
   },
   {
@@ -193,15 +172,7 @@ const items = [
     price: "$3,649",
     description:
       "Gaming beast with high-end graphics and cooling system in a bold chassis.",
-    tags: [
-      "desktop",
-      "Windows",
-      "HP",
-      "gaming",
-      "performance",
-      "cooling",
-      "RGB",
-    ],
+    tags: ["desktop", "Windows", "gaming", "performance", "RGB"],
   },
   {
     id: 12,
@@ -215,7 +186,6 @@ const items = [
     tags: [
       "desktop",
       "Windows",
-      "Lenovo",
       "gaming",
       "performance",
       "RGB",
@@ -233,15 +203,7 @@ const items = [
     price: "$2,999",
     description:
       "Mesmerizing visuals with OLED technology, 120Hz refresh rate, and Quantum HDR.",
-    tags: [
-      "display",
-      "Samsung",
-      "OLED",
-      "120Hz",
-      "HDR",
-      "smart-TV",
-      "home-theater",
-    ],
+    tags: ["display", "OLED", "120Hz", "HDR", "smart-TV", "home-theater"],
   },
   {
     id: 14,
@@ -254,7 +216,6 @@ const items = [
       "UltraWide screen real estate perfect for multitasking and immersive content creation.",
     tags: [
       "display",
-      "LG",
       "UltraWide",
       "monitor",
       "multitasking",
@@ -270,7 +231,16 @@ const items = [
     price: "$6,299",
     description:
       "Apple’s top-tier monitor with 6K resolution and extreme dynamic range for pros.",
-    tags: ["display", "Apple", "6K", "XDR", "Retina", "creative", "monitor"],
+    tags: [
+      "display",
+      "6K",
+      "XDR",
+      "Liquid Retina",
+      "creative",
+      "monitor",
+      "productivity",
+      "color-accurate",
+    ],
   },
   {
     id: 16,
@@ -281,15 +251,7 @@ const items = [
     price: "$2,749",
     description:
       "Color-accurate 4K monitor tailored for design, media, and productivity workflows.",
-    tags: [
-      "display",
-      "Dell",
-      "4K",
-      "monitor",
-      "color-accurate",
-      "productivity",
-      "design",
-    ],
+    tags: ["display", "4K", "monitor", "color-accurate", "productivity"],
   },
 ];
 
