@@ -81,6 +81,7 @@ function ContentCarousel() {
               >
                 <h3 className="display-1 fw-bold">{item.name}</h3>
                 <p className="fs-4">{item.description}</p>
+                <p className="fs-4 fw-bold">{item.action}</p>
                 <p className="fw-bold text-white fs-3">{item.price}</p>
               </Carousel.Caption>
             </Carousel.Item>

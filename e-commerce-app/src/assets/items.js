@@ -10,6 +10,7 @@ const items = [
     description:
       "Apple’s latest iPhone with an advanced A18 chip, enhanced camera system, and stunning OLED display.",
     tags: ["smartphone", "iOS", "OLED", "photography", "flagship"],
+    action: "Upgrade now and experience the power of Apple's A18 chip!",
   },
   {
     id: 2,
@@ -28,6 +29,7 @@ const items = [
       "fast-charging",
       "flagship",
     ],
+    action: "Capture every moment—switch to the Galaxy S25 today!",
   },
   {
     id: 3,
@@ -39,6 +41,7 @@ const items = [
     description:
       "A pure Android experience powered by Google Tensor chip and industry-leading AI photography.",
     tags: ["smartphone", "Android", "AI-camera", "photography"],
+    action: "Unleash smart photography—grab the Pixel 8 now!",
   },
   {
     id: 4,
@@ -50,6 +53,7 @@ const items = [
     description:
       "Blazing-fast performance with Snapdragon 8 Gen chip and ultra-smooth 144Hz display.",
     tags: ["smartphone", "Android"],
+    action: "Game. Stream. Dominate. Get the OnePlus 13 now!",
   },
 
   // Laptops
@@ -73,6 +77,7 @@ const items = [
       "performance",
       "productivity",
     ],
+    action: "Power your creativity—bring home the MacBook Pro M4!",
   },
   {
     id: 6,
@@ -93,6 +98,7 @@ const items = [
       "performance",
       "productivity",
     ],
+    action: "Redefine your workflow with the XPS 16—order today!",
   },
   {
     id: 7,
@@ -113,6 +119,7 @@ const items = [
       "battery-life",
       "productivity",
     ],
+    action: "Stay versatile and productive—own the Spectre x360 now!",
   },
   {
     id: 8,
@@ -131,6 +138,7 @@ const items = [
       "portable",
       "productivity",
     ],
+    action: "Lead with power—equip yourself with the ThinkPad X1!",
   },
 
   // Desktops
@@ -144,6 +152,7 @@ const items = [
     description:
       "All-around desktop for professionals with top-tier performance and expandability.",
     tags: ["desktop", "Windows", "performance", "upgradeable"],
+    action: "Level up your workspace—get the Dell Pro Max!",
   },
   {
     id: 10,
@@ -162,6 +171,7 @@ const items = [
       "performance",
       "productivity",
     ],
+    action: "Fuel your projects with the powerhouse Mac Pro—buy now!",
   },
   {
     id: 11,
@@ -173,6 +183,7 @@ const items = [
     description:
       "Gaming beast with high-end graphics and cooling system in a bold chassis.",
     tags: ["desktop", "Windows", "gaming", "performance", "RGB"],
+    action: "Rule the game—gear up with the HP Omen today!",
   },
   {
     id: 12,
@@ -191,6 +202,8 @@ const items = [
       "RGB",
       "overclocking",
     ],
+    action:
+      "Step into elite gaming—build your battle station with the Legion Tower!",
   },
 
   // Displays
@@ -204,6 +217,7 @@ const items = [
     description:
       "Mesmerizing visuals with OLED technology, 120Hz refresh rate, and Quantum HDR.",
     tags: ["display", "OLED", "120Hz", "HDR", "smart-TV", "home-theater"],
+    action: "Transform movie nights—bring home the Samsung OLED TV now!",
   },
   {
     id: 14,
@@ -221,6 +235,7 @@ const items = [
       "multitasking",
       "content-creation",
     ],
+    action: "Maximize your multitasking—go UltraWide with LG!",
   },
   {
     id: 15,
@@ -241,6 +256,7 @@ const items = [
       "productivity",
       "color-accurate",
     ],
+    action: "Elevate your studio—create with the Pro Display XDR!",
   },
   {
     id: 16,
@@ -252,6 +268,7 @@ const items = [
     description:
       "Color-accurate 4K monitor tailored for design, media, and productivity workflows.",
     tags: ["display", "4K", "monitor", "color-accurate", "productivity"],
+    action: "Design brilliantly—upgrade to the UltraSharp Monitor!",
   },
 ];
 
