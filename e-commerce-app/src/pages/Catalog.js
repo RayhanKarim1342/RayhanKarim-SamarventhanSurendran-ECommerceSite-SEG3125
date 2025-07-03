@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Card, Container, Row, Col, Button, Form } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
@@ -29,6 +29,13 @@ const Catalog = () => {
     () => getAllTags(filteredByCategory),
     [filteredByCategory]
   );
+
+  useEffect(() => {
+    setSelectedBrands([]);
+    setSelectedPrices([]);
+    setSelectedTags([]);
+    setTagSearch("");
+  }, [category]);
 
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [selectedPrices, setSelectedPrices] = useState([]);
